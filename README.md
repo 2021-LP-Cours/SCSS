@@ -340,7 +340,7 @@ Un mixin permet de stocker plusieurs attributs mais il permet également d'ajout
 ```
 
 # Fonctions
-Certaines fois, nous allons avoir besoin de faire des petites tâches répétitives. Pour éviter de les refaire à plusieur reprise, nous allons créer des fonctions.
+Certaines fois, nous allons avoir besoin de faire des petites tâches répétitives. Pour éviter de les refaire à plusieurs reprises, nous allons créer des fonctions.
 
 ### Définir une fonction avec "@function" et retourner une valeur avec "@return"
 

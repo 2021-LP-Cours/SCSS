@@ -238,6 +238,8 @@ Attention, seul petit bémol pour utiliser la division, on va devoir utiliser le
 
 #### SCSS : 
 ```scss
+@use "sass:math";
+
 .content{
   padding-top : math.div(9, 16) * 100%;
 }
@@ -381,6 +383,8 @@ Parfois, les boucles sont intéressantes pour éviter d'avoir du code similaire 
 
 #### SCSS :
 ```scss
+@use "sass:math";
+
 .row {
   display: flex;
   flex-wrap: wrap

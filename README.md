@@ -232,6 +232,25 @@ Sass va nous permettre de découper notre code CSS en plusieurs fichiers. Cette 
 ```
 Attention, l'ordre des import est très important pour utiliser des variables ou des fonctions. Vous devez impérativement les importer avant le reste.
 
+# Opérations
+Faire des opérations peut être utile dans notre code scss. Pour celà nous avons les signes "+", "-", "*" et "math.div"
+Attention, seul petit bémol pour utiliser la division, on va devoir utiliser le module "@use "sass:math";"
+
+#### SCSS : 
+```scss
+.content{
+  padding-top : math.div(9, 16) * 100%;
+}
+```
+
+#### CCSS : 
+```css
+.content{
+  padding-top : 56.25%;
+}
+```
+
+
 # Mixins
 Les variables nous permettent de stocker une valeur réutilisables dans notre code. Mais quelques fois nous aimerions pouvoir stocker plusieurs attributs et valeurs pour les réutiliser. C'est le rôle du "Mixin".
 
@@ -315,5 +334,130 @@ Un mixin permet de stocker plusieurs attributs mais il permet également d'ajout
   .text{
     font-size: 1.6rem;
   }
+}
+```
+
+# Fonctions
+Certaines fois, nous allons avoir besoin de faire des petites tâches répétitives. Pour éviter de les refaire à plusieur reprise, nous allons créer des fonctions.
+
+### Définir une fonction avec "@function" et retourner une valeur avec "@return"
+
+#### SCSS :
+```scss
+$rootFontSize : 16;
+@function pxToRem($value){
+  @return math.div($value, $rootFontSize)+rem;
+}
+```
+Fonction qui prends en paramètre $value (valeur en px) et nous retourne la valeur en rem
+
+### Utilisation d'une fonction
+Pour utiliser une fonction, il suffit de l'appeler à la place d'une valeur pour un attribut
+
+#### SCSS :
+```scss
+.title{
+  font-size : pxToRem(16)
+}
+.title{
+  font-size : pxToRem(14)
+}
+```
+
+#### CSS :
+```css
+.title{
+  font-size : 1rem;
+}
+.title{
+  font-size : 0.875rem;
+}
+```
+
+# Les boucles
+Parfois, les boucles sont intéressantes pour éviter d'avoir du code similaire à copier coller 
+
+### Création d'une boucles avec @for
+
+#### SCSS :
+```scss
+.row {
+  display: flex;
+  flex-wrap: wrap
+}
+
+@for $i from 1 through 12{
+  .col-#{$i} {
+    width: math.div($i, 12) * 100%;
+    flex-basis: math.div($i, 12) * 100%;
+  }
+}
+```
+Exemple pour faire sa propre grille en seulement quelques lignes.
+
+#### CSS:
+```css
+.row {
+  display: flex;
+  flex-wrap: wrap
+}
+.col-1 {
+  width: 8.3333333333%;
+  flex-basis: 8.3333333333%
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  flex-basis: 16.6666666667%
+}
+
+.col-3 {
+  width: 25%;
+  flex-basis: 25%
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  flex-basis: 33.3333333333%
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  flex-basis: 41.6666666667%
+}
+
+.col-6 {
+  width: 50%;
+  flex-basis: 50%
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  flex-basis: 58.3333333333%
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  flex-basis: 66.6666666667%
+}
+
+.col-9 {
+  width: 75%;
+  flex-basis: 75%
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  flex-basis: 83.3333333333%
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  flex-basis: 91.6666666667%
+}
+
+.col-12 {
+  width: 100%;
+  flex-basis: 100%
 }
 ```

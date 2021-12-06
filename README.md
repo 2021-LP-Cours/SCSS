@@ -2,7 +2,7 @@
 
 Liste des fonctionnalités Sass.
 
-# Les variables
+# 1. Les variables
 Nous allons pouvoir stocker une valeur dans une variable et pouvoir la réutiliser partout dans la suite de notre code.
 
 #### CSS :
@@ -28,10 +28,10 @@ p{
   color: $color;
 }
 ```
-# Concaténation
+# 2. Concaténation
 
 
-## Signe "&"
+## 2.1. Signe "&"
 Sass a un signe spécifique pour concaténer les sélecteurs parent et enfant : l’esperluette (&).
 
 Pour les pseudosélecteurs (ex: hover, before, etc)
@@ -62,7 +62,7 @@ Pour les pseudosélecteurs (ex: hover, before, etc)
 }
 ```
 
-### Pour la méthode BEM 
+### 2.1.1. Pour la méthode BEM 
 
 #### SCSS :
 
@@ -91,7 +91,7 @@ Pour les pseudosélecteurs (ex: hover, before, etc)
 }
 ```
 
-### Utilisation avancée du signe "&"
+### 2.1.2. Utilisation avancée du signe "&"
 On peut utiliser le signe "&" pour concaténer le sélecteur parent après le sélecteur sur lequel nous sommes en train de travailler.
 
 Un exemple très utile : Le darkmode
@@ -176,7 +176,7 @@ On peut stocker le signe "&" dans une variable pour pouvoir l'utiliser en dehors
 
 
 
-## signe ">", "+", "~", etc
+## 2.2. signe ">", "+", "~", etc
 ```scss
 .parent {
   > .enfant {
@@ -200,7 +200,7 @@ On peut stocker le signe "&" dans une variable pour pouvoir l'utiliser en dehors
 
 
 
-# Découpage des fichiers
+# 3. Découpage des fichiers
 Sass va nous permettre de découper notre code CSS en plusieurs fichiers. Cette fonctionnalité est très utile car nous pourrons créer des fichiers pour un composant en particulier.
 
 #### SCSS : 
@@ -232,7 +232,7 @@ Sass va nous permettre de découper notre code CSS en plusieurs fichiers. Cette 
 ```
 Attention, l'ordre des import est très important pour utiliser des variables ou des fonctions. Vous devez impérativement les importer avant le reste.
 
-# Opérations
+# 4. Opérations
 Faire des opérations peut être utile dans notre code scss. Pour celà nous avons les signes "+", "-", "*" et "math.div"
 Attention, seul petit bémol pour utiliser la division, on va devoir utiliser le module "@use "sass:math";"
 
@@ -253,7 +253,7 @@ Attention, seul petit bémol pour utiliser la division, on va devoir utiliser le
 ```
 
 
-# Mixins
+# 5. Mixins
 Les variables nous permettent de stocker une valeur réutilisables dans notre code. Mais quelques fois nous aimerions pouvoir stocker plusieurs attributs et valeurs pour les réutiliser. C'est le rôle du "Mixin".
 
 ### Définir un mixin avec "@mixin"
@@ -339,7 +339,7 @@ Un mixin permet de stocker plusieurs attributs mais il permet également d'ajout
 }
 ```
 
-# Fonctions
+# 6. Fonctions
 Certaines fois, nous allons avoir besoin de faire des petites tâches répétitives. Pour éviter de les refaire à plusieurs reprises, nous allons créer des fonctions.
 
 ### Définir une fonction avec "@function" et retourner une valeur avec "@return"
@@ -376,7 +376,7 @@ Pour utiliser une fonction, il suffit de l'appeler à la place d'une valeur pour
 }
 ```
 
-# Les boucles
+# 7. Les boucles
 Parfois, les boucles sont intéressantes pour éviter d'avoir du code similaire à copier coller 
 
 ### Création d'une boucles avec @for
